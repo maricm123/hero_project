@@ -162,4 +162,41 @@ class ConfigViewTestCase(DeviceApiTestCase):
 
     def test_create_config_invalid_data(self):
         url = reverse("api_device:device-config")
-        pass
+        
+        data = {
+        "Table": {
+            "device": {
+            "device_id": 1,
+                "passcode": "1234",
+                "timezone_name": "America/New_York"
+            },
+            "consumables": [
+                {
+                    "id": "id_1",
+                    "name": "Vitamin C",
+                    "expiration_date": "2020-03-14",
+                    "dosage": "200 mg",
+                    "passcode_mandatory": False,
+                    "form": "Cap",
+                    "max_doses": 4
+                }
+            ],
+            "slots": [
+                {
+                    "slot_index": 1,
+                    "consumable_id": "id_115",
+                    "exact_pill_count": 20
+                },
+            {
+                    "slot_index": 1,
+                    "consumable_id": "id_115",
+                    "exact_pill_count": 20
+                }
+            ]
+        }
+        }
+
+        response = self.client.post(path=url, data=data, format="json")
+
+        self.assertEqual(Pill.objects.count(), 1)
+        self.assertEqual(Config.objects.count(), 1)
