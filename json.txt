@@ -76,7 +76,7 @@ One pill:
     "slots": [
         {
             "slot_index": 1,
-            "consumable_id": "id_115",
+            "consumable_id": "id_1",
             "exact_pill_count": 20
         }
     ]
