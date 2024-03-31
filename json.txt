@@ -1,0 +1,164 @@
+JSON data for sending from FRONTEND
+
+Two pills:
+
+{
+    "device_id" : 1,
+    "passcode": "1234",
+    "timezone_name": "America/New_York",
+    "pills": [
+        {
+            "slot": 1,
+            "name": "Vitamin C",
+            "dosage": "200 mg",
+            "expires": "2020-03-14",
+            "passcode_required": true,
+            "form": "Cap",
+            "exact_pill_count": 10,
+            "max_manual_doses": 4
+        },
+	{
+            "slot": 2,
+            "name": "Aspirin",
+            "dosage": "500 mg",
+            "expires": "2020-03-14",
+            "passcode_required": true,
+            "form": "Cap",
+	    "exact_pill_count": 10,
+            "max_manual_doses": 4
+        }
+    ]
+}
+
+One pill:
+
+{
+    "device_id" : 1,
+    "passcode": "1234",
+    "timezone_name": "America/New_York",
+    "pills": [
+        {
+            "slot": "1",
+            "name": "Aspirin",
+            "dosage": "500mg",
+            "expires": "2024-03-19",
+            "passcode_required": true,
+            "form": "Cap",
+	    "exact_pill_count": 10,
+            "max_manual_doses": 4
+        }
+    ]
+}
+
+
+JSON data for sending from DEVICE
+
+One pill:
+
+{
+"Table": {
+    "device": {
+	"device_id": 1,
+        "passcode": "1234",
+        "timezone_name": "America/New_York"
+    },
+    "consumables": [
+        {
+            "id": "id_1",
+            "name": "Vitamin C",
+            "expiration_date": "2020-03-14",
+            "dosage": "200 mg",
+            "passcode_mandatory": false,
+            "form": "Cap",
+            "max_doses": 4
+        }
+    ],
+    "slots": [
+        {
+            "slot_index": 1,
+            "consumable_id": "id_115",
+            "exact_pill_count": 20
+        }
+    ]
+}
+}
+
+Invalid data:
+
+{
+"Table": {
+    "device": {
+	"device_id": 1,
+        "passcode": "1234",
+        "timezone_name": "America/New_York"
+    },
+    "consumables": [
+        {
+            "id": "id_1",
+            "name": "Vitamin C",
+            "expiration_date": "2020-03-14",
+            "dosage": "200 mg",
+            "passcode_mandatory": false,
+            "form": "Cap",
+            "max_doses": 4
+        }
+    ],
+    "slots": [
+        {
+            "slot_index": 1,
+            "consumable_id": "id_115",
+            "exact_pill_count": 20
+        },
+	{
+            "slot_index": 1,
+            "consumable_id": "id_115",
+            "exact_pill_count": 20
+        }
+    ]
+}
+}
+
+Two pills:
+
+{
+"Table": {
+    "device": {
+	"device_id": 1,
+        "passcode": "1234",
+        "timezone_name": "America/New_York"
+    },
+    "consumables": [
+        {
+            "id": "id_11",
+            "name": "Vitamin C",
+            "expiration_date": "2020-03-14",
+            "dosage": "200 mg",
+            "passcode_mandatory": false,
+            "form": "Cap",
+            "max_doses": 4
+        },
+	{
+            "id": "id_1",
+            "name": "Aspirin",
+            "expiration_date": "2020-03-14",
+            "dosage": "200 mg",
+            "passcode_mandatory": false,
+            "form": "Cap",
+            "max_doses": 4
+        }
+
+    ],
+    "slots": [
+        {
+            "slot_index": 1,
+            "consumable_id": "id_1",
+            "exact_pill_count": 20
+        },
+	{
+            "slot_index": 1,
+            "consumable_id": "id_11",
+            "exact_pill_count": 100
+        }
+    ]
+}
+}
