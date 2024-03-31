@@ -11,6 +11,7 @@ class ConfigView(APIView):
         data = request.data.pop('Table')
         serializer = TableSerializer(data=data)
         serializer.is_valid(raise_exception=True)
+
         if serializer.validated_data.get("pk"):
             new_config = Config.objects.get(pk=serializer.validated_data["pk"])
             return Response(ConfigOutSerializer(new_config).data, status=HTTP_201_CREATED)

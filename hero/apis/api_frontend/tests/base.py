@@ -4,7 +4,6 @@ from rest_framework.test import APITestCase
 class FrontendHeroAPITestCase(APITestCase):
     namespace = "api_frontend"
 
-
 def serialize_config(config):
     return dict(
         device_id=config.device_id,

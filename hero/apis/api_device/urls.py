@@ -1,6 +1,6 @@
-from django.urls import include, path
-
+from django.urls import path
 from .views import views_config
+
 app_name = "api_device"
 
 urlpatterns = [

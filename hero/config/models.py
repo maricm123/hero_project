@@ -22,6 +22,17 @@ class Config(models.Model):
     @transaction.atomic
     def create(cls, **kwargs):
         device_id = kwargs.get("device_id")
+        cls.last_active(cls, device_id)
+
+        try:
+            new_config = cls.objects.create(
+                **kwargs
+            )
+        except Exception as e:
+            raise ValidationError(e)
+        return new_config
+    
+    def last_active(self, device_id):
         try:
             old_config = Config.objects.last_active(device_id)
             if old_config:
@@ -30,13 +41,6 @@ class Config(models.Model):
             pass
         except Exception as e:
             raise ValidationError(e)
-        try:
-            new_config = cls.objects.create(
-                **kwargs
-            )
-        except Exception as e:
-            raise ValidationError(e)
-        return new_config
 
     def deactivate(self):
         self.is_active = False
