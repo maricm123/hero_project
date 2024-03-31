@@ -3,15 +3,15 @@
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [Features](#features)
 - [Requirements](#requirements)
-- [Getting Started](#getting-started)
-  - [Installation](#installation)
-  - [Configuration](#configuration)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+- [Installation](#installation)
 
 ## Requirements
 
 - Docker (Ensure Docker is installed and running on your system)
+
+## Installation
+
+- Clone repository
+https://github.com/maricm123/hero_project
+- cd hero
