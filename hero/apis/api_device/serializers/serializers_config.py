@@ -40,7 +40,7 @@ class SlotSerializer(serializers.ModelSerializer):
     consumable_id = serializers.CharField(source="id", required=True)
 
     class Meta:
-        model=Pill
+        model = Pill
         fields = ('slot_index', "consumable_id", "exact_pill_count")
 
     def validate_consumable_id(self, value):
@@ -73,6 +73,7 @@ class TableSerializer(serializers.Serializer):
         pills_from_request = count_pills_from_request(data)
         pills_from_database = pills.count()
 
+        # If there is not same number of pills (from database and from request), create new config
         if pills_from_request != pills_from_database:
             new_config = self.create_config_and_pills(data, consumable_and_slot_pair)
             data["pk"] = new_config.pk
