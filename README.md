@@ -14,7 +14,8 @@
 
 - Clone repository
 https://github.com/maricm123/hero_project
-- cd hero
+- cd hero_project
+- cd hero (there is docker-compose file)
 - run 'docker compose up --build' command to build containers for app (Python, PostgreSql)
 - Maybe you will need to stop postgres service on your machine (because of ports)
 - If you use Windows, you can do that in Services, find postgresql Server, right click on it and stop
