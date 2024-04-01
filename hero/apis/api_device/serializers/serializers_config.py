@@ -48,7 +48,7 @@ class SlotSerializer(serializers.ModelSerializer):
         return consumable_id
 
 
-class TableSerializer(serializers.Serializer):
+class DeviceConfigSerializer(serializers.Serializer):
     device = DeviceSerializer()
     consumables = PillSerializer(many=True)
     slots = SlotSerializer(many=True)

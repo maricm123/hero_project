@@ -13,7 +13,7 @@ class PillSerializer(serializers.ModelSerializer):
         fields = ("slot", "name", "dosage", "expires", "passcode_required", "form", "exact_pill_count", "max_manual_doses",)
 
 
-class ConfigSerializer(serializers.Serializer):
+class FrontendConfigSerializer(serializers.Serializer):
     device_id = serializers.IntegerField()
     passcode = serializers.CharField()
     timezone_name = serializers.CharField()

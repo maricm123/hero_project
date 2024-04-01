@@ -1,5 +1,5 @@
 from rest_framework.views import APIView
-from apis.api_device.serializers.serializers_config import TableSerializer
+from apis.api_device.serializers.serializers_config import DeviceConfigSerializer
 from rest_framework.response import Response
 from rest_framework.status import HTTP_201_CREATED, HTTP_200_OK
 from config.models import Config
@@ -9,7 +9,7 @@ from apis.shared_serializers import ConfigOutSerializer
 class ConfigView(APIView):
     def post(self, request):
         data = request.data.pop('Table')
-        serializer = TableSerializer(data=data)
+        serializer = DeviceConfigSerializer(data=data)
         serializer.is_valid(raise_exception=True)
 
         if serializer.validated_data.get("pk"):

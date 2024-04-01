@@ -29,5 +29,5 @@ def check_same_pill_and_slot(data):
         slot.pop("id")
         combined_object = {**consumable, **slot}
         consumables_slots_pairs.append(combined_object)
-        
+
     return consumables_slots_pairs
