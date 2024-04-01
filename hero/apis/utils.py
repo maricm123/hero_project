@@ -14,7 +14,7 @@ def check_same_pill_and_slot(data):
     slots = data.get('slots', [])
 
     if len(consumables) != len(slots):
-        raise ValidationError("Invalid data, not same consumables and slots")
+        raise ValidationError("Invalid data, not same number of consumables and slots")
 
     consumables_slots_pairs = []
     for consumable in consumables:

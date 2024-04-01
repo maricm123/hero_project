@@ -196,7 +196,7 @@ class ConfigViewTestCase(DeviceApiTestCase):
         }
         }
 
-        response = self.client.post(path=url, data=data, format="json")
+        self.client.post(path=url, data=data, format="json")
 
         self.assertEqual(Pill.objects.count(), 1)
         self.assertEqual(Config.objects.count(), 1)
