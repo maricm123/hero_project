@@ -80,28 +80,28 @@ WSGI_APPLICATION = 'app_settings.wsgi.application'
 
 
 # Local database for dev and test
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'hero',
-        'USER': 'postgres',
-        'PASSWORD': 'admin',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
-}
-
-# DOCKER POSTGRES
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'postgres',
+#         'NAME': 'hero',
 #         'USER': 'postgres',
-#         'PASSWORD': 'postgres',
-#         'HOST': 'hero-db-1',
+#         'PASSWORD': 'admin',
+#         'HOST': '127.0.0.1',
 #         'PORT': '5432',
 #     }
 # }
+
+# DOCKER POSTGRES
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'hero-db-1',
+        'PORT': '5432',
+    }
+}
 
 
 
