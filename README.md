@@ -1,4 +1,4 @@
-This repository contains the codebase for job application (Mini project/task).
+# This repository contains the codebase for job application (Mini project/task).
 
 # Project Hero
 
